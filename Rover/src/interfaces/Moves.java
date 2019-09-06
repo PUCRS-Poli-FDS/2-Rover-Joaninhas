@@ -1,4 +1,4 @@
 package interfaces;
-{
-public interface Moves() {}
-}
+
+public interface Moves{}
+
