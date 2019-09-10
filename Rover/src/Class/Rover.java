@@ -21,7 +21,7 @@ public class Rover {
     		this.coordinate = coordinate;
     	}
     	
-    	public void printPosition() {
+    	public String printPosition() {
     		char dir = 'N';
     		if (coordinate == 1) {
     			dir = 'N';
@@ -32,13 +32,20 @@ public class Rover {
     		} else if (coordinate == 4) {
     			dir = 'W';
     		}
-    		System.out.println(x + " " + y + " " + dir);
+    		    		
+    		  return x + " " + y + " " + dir;
     	}
     	
     	public void process(String commands) {
     		for (int idx = 0; idx < commands.length(); idx++) {
     			process(commands.charAt(idx));
     		}
+    	}
+    	
+    	public void metodoParaDarErro() {
+    		int number=0;
+    		int result = number+2;
+    		
     	}
     	
     	private void process(Character command) {
