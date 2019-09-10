@@ -9,27 +9,27 @@ public class Rover {
     	
     	int x = 0;
     	int y = 0;
-    	int coordenadas = N;
+    	int coordinate = N;
     	
     	public Rover() {
     		
     	}
     	
-    	public void setPosition(int x, int y, int coordenadas) {
+    	public void setPosition(int x, int y, int coordinate) {
     		this.x = x;
-    		this.y = y;
-    		this.coordenadas = coordenadas;
+    		this.y = y;    		
+    		this.coordinate = coordinate;
     	}
     	
     	public void printPosition() {
     		char dir = 'N';
-    		if (coordenadas == 1) {
+    		if (coordinate == 1) {
     			dir = 'N';
-    		} else if (coordenadas == 2) {
+    		} else if (coordinate == 2) {
     			dir = 'E';
-    		} else if (coordenadas == 3) {
+    		} else if (coordinate == 3) {
     			dir = 'S';
-    		} else if (coordenadas == 4) {
+    		} else if (coordinate == 4) {
     			dir = 'W';
     		}
     		System.out.println(x + " " + y + " " + dir);
@@ -50,28 +50,28 @@ public class Rover {
     			move();
     		} else {
     			throw new IllegalArgumentException(
-    					"Speak in Mars language, please!");
+    					"Please enter only L, R or M letters!");
     		}
     	}
     	
     	private void move() {
-    		if (coordenadas == N) {
+    		if (coordinate == N) {
     			this.y++;
-    		} else if (coordenadas == E) {
+    		} else if (coordinate == E) {
     			this.x++;
-    		} else if (coordenadas == S) {
+    		} else if (coordinate == S) {
     			this.y--;
-    		} else if (coordenadas == W) {
+    		} else if (coordinate == W) {
     			this.x--;
     		}
     	}
     	
     	private void turnLeft() {
-    		coordenadas = (coordenadas - 1) < N ? W : coordenadas - 1;
+    		coordinate = (coordinate - 1) < N ? W : coordinate - 1;
     	}
     	
     	private void turnRight() {
-    		coordenadas = (coordenadas + 1) > W ? N : coordenadas + 1;
+    		coordinate = (coordinate + 1) > W ? N : coordinate + 1;
     	}
     	
     }
